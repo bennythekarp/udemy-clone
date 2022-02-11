@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stylesheets -->    
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="main-nav.css">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/9a5af76cba.js" crossorigin="anonymous"></script>
+    <title>Nav Test</title>
+</head>
+<body>
+    <div class="container">
+    <nav class="top-nav">
+        <div class="hamburger">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+         </div>
+         <div class="front-piece">
+            <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="logo" class="logo">
+            <div class='categories'>categories</div>
+         </div>
+        <form class="search-bar-container" src='/search' method="POST">
+            <button class="search-bar-button">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path
+                         d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                   </svg>
+                </button>
+                <input class="search-bar" type="search" placeholder="Search for anything" aria-label="Search">
+             </form>
+
+            <!-- end piece -->
+            <ul class="end-piece">
+                <li class="dropdown udemy-business">
+                      Udemy Business
+                   <div class="dropdown-menu">
+                      <div class="card">
+                         <div class="card-body">
+                            <h5 class="card-title">Get your team access to over 6,000 top Udemy courses, anytime, anywhere.</h5>
+                            <a href="#">Try Udemy Business</a>
+                         </div>
+                      </div>
+                   </div>
+                </li>
+                <li class="dropdown teach-udemy">
+                      Teach on Udemy
+                   <div class="dropdown-menu">
+                      <div class="card">
+                         <div class="card-body">
+                            <h5 class="card-title">Turn what you know into an opportunity and reach millions around the world.</h5>
+                            <a href="#">Learn More</a>
+                         </div>
+                      </div>
+                   </div>
+                </li>
+                <li class="dropdown my-learning">
+                    My learning
+                   <div class="dropdown-menu">
+                      <div id="learn-drop-cards" class="list-group">
+                            <a href="*" class="list-group-item list-group-item-action">
+                               <div class="drop-card">
+                                  <img src="" class="drop-card-img" alt="...">
+                                  <div class="drop-card-body">
+                                     <h4 class="drop-card-title">Doin</h4>
+                                  </div>
+                               </div>
+                            </a> 
+                      </div>
+                   </div>
+                </li>
+    
+                <li class="heart">
+                   <svg xmlns="http://www.w3.org/2000/svg"
+                         width="16" height="16" fill="currentColor" class="bi bi-heart icon" viewBox="0 0 16 16">
+                         <path
+                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+                </li>
+                <li class="cart">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                         height="16" fill="currentColor" class="bi bi-cart3 icon" viewBox="0 0 16 16">
+                         <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                </li>
+                <li class="bell">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                         height="16" fill="currentColor" class="bi bi-bell icon" viewBox="0 0 16 16">
+                         <path
+                            d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                      </svg>
+                </li>
+                <li class="home">
+                      <span class="btn btn-primary home-button">B</span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- home page -->
+        <main>
+            <section class="main-jumbo-container">
+                <arcticle class="card">
+                    <div class="card-title">
+                        <h1>a new brand, <br>a renewed purpose</h1>
+                    </div>
+                    <div class="card-text">
+                        <p>
+                            We're still changing learning for the better - now we just look
+                            better doing it
+                        </p>
+                    </div>
+                </arcticle>
+                <div class="image-home">
+                </div>
+            </section>
+            
+            <section class="card-container">
+            </section>
+        </main>
+        <footer>some other content</footer>
+        <div class="screen"></div>
+    </div>
+        
+    <!-- side nav -->    
+    </nav>
+    <nav class="side-nav main-nav">
+        <section class="main-nav-header">
+            <div class="profile-logo">B</div>
+            <div class="profile-message">
+                <span class="greeting">Hi, Benjamin</span>
+                <span>Welcome back</span>
+            </div>
+            <div class="profile-arrow">
+                <i class="fas fa-angle-right"></i>
+            </div>
+        </section>
+        <section class="main-nav-learning">
+            <span class="menu-header">Learn</span>
+            <ul class="menu-link">
+                <a href="/mylearning">
+                <li>My learning</li>
+                </a>
+            </ul>
+        </section>
+        <section class="main-nav-menu">
+            <span class="menu-header">Most Popular</span>
+            <ul class="side-nav-lists">
+                <li id="webDev">
+                    <span>Web Development</span>
+                    <div class="profile-arrow">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </li>
+                <li id="mobDev">
+                    <span>Mobile Development</span>
+                    <div class="profile-arrow">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </li>
+                <li id="gameDev">
+                    <span>Game Development</span>
+                    <div class="profile-arrow">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </li>
+                <li id="entrepreneurship">
+                    <span>Entrepreneurship</span>
+                    <div class="profile-arrow">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </li>
+                <li id="businessAnalytics">
+                    <span>Business Analytics & <br>Intelligence</span>
+                    <div class="profile-arrow">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </li>
+                <li id="digitalMarketing">
+                    <span>Digital Marketing</span>
+                    <div class="profile-arrow">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </li>
+                <li id="graphicDesign">
+                    <span>Graphic Design & Illustration</span>
+                    <div class="profile-arrow">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </li>
+                <li id="itCertification">
+                    <span>IT Certifications</span>
+                    <div class="profile-arrow">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </li>
+                <li id="personalTransformation">
+                    <span>Personal Transformation</span>
+                    <div class="profile-arrow">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </li>
+                <li id="allCategories">
+                    <span>All categories</span>
+                    <div class="profile-arrow">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </li>   
+            </ul>
+        </section>
+        <section class="main-nav-footer">
+            <span class="menu-header">More from Udemy</span>
+            <ul class="menu-link">
+                <a href="/udemybusiness">
+                <li>Udemy Business</li>
+                </a>
+                <a href="/gettheapp">
+                <li>Get the app</li>
+                </a>
+                <a href="/invitefriends">
+                <li>Invite friends</li>
+                </a>
+                <a href="/help">
+                <li>Help</li>
+                </a>
+            </ul>
+            <button>
+                <i class="fas fa-globe"></i>
+                <span>English</span>
+            </button>
+        </section>
+    </nav>
+    <!-- when you click on category link -->
+    <nav class="side-nav second-nav">
+        <section class="back-to-menu">
+            <i class="fas fa-angle-left"></i>
+            <span>Menu</span>
+        </section>
+        <section class="second-nav-menu">
+        <ul class="side-nav-lists">
+        </ul>
+        </section>
+    </nav>
+    <!-- when you click on settings link -->
+    <nav class="side-nav settings-nav">
+        <section class="back-to-menu">
+            <i class="fas fa-angle-left"></i>
+            <span>Menu</span>
+        </section>
+        <section class="settings-nav-alerts">
+            <span class="menu-header">Alerts</span>
+            <ul class="side-nav-lists">
+                <a href="/notifications">
+                <li>Notifications</li>
+                </a>
+                <a href="/messages">
+                <li>Messages
+                    <span class="messages-alert">4</span>
+                </li></a>
+                <a href="/wishlist">
+                <li>Wishlist</li></a>    
+            </ul>
+        </section>
+        <section class="settings-nav-account">
+            <span class="menu-header">Account</span>
+            <ul class="menu-link">
+                <a href="/accountsettings">
+                <li>Account settings</li>
+                </a>
+                <a href="/paymentmethods">
+                <li>Payment methods</li></a>
+                <a href="/subscriptions">
+                <li>Subscriptions</li></a>    
+                <a href="/udemycredits">
+                <li>Udemy credits</li></a>    
+                <a href="/purchasehistory">
+                <li>Purchase History</li></a>    
+            </ul>
+        </section>
+        <section class="settings-nav-profile">
+            <span class="menu-header">Profile</span>
+            <ul class="menu-link">
+                <a href="/publicprofile">
+                <li>Public profile</li>
+                </a>
+                <a href="/editprofile">
+                <li>Edit profile</li></a>
+                <a href="/logout">
+                <li>Log out</li></a>    
+            </ul>
+        </section>
+    </nav>
+    <script src="app.js"></script>
+</body>
+</html>
