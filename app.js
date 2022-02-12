@@ -82,3 +82,26 @@ menus.forEach(menu => {
     })
 })
 
+const learningList = document.querySelector('.my-learning-list')
+const learningData = [
+    {
+        course: 'Javascript Algorithims and Data Structures Masterclass',
+        img: 'https://img-c.udemycdn.com/course/240x135/1406344_1d65_3.jpg'
+    },
+    {
+        course: 'The Modern React Bootcamp',
+        img: 'https://img-c.udemycdn.com/course/240x135/2320056_4fa0_6.jpg'
+    }
+]
+
+for (i = 0; i < learningData.length; i++){
+    let image = document.createElement('img')
+    image.src = learningData[i].img
+    let title = document.createElement('h4')
+    title.innerHTML = learningData[i].course
+    let card = document.createElement('div')
+    card.appendChild(image)
+    card.appendChild(title)
+    card.classList.add('learning-card')
+    learningList.appendChild(card)
+}
