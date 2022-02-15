@@ -1,36 +1,3 @@
-const categories = {
-    webDev: [
-        'Wev Development', 'JavaScript', 'React', 'CSS', 'Angular', 'Node.Js', 'HTML5', 'PHP', 'Django'
-    ],
-    mobDev: [
-        'Google Flutter', 'Android Development', 'iOS Development', 'Swift', 'React Native', 'Dart (programming language)', 'Mobile Development', 'Kotlin', 'SwiftUI'
-    ], 
-    gameDev: [
-        'Unity', 'Unreal Engine', 'Game Development Fundamentals', 'C#', '2D Game Development', 'Unreal Engine Blueprints', 'Virtual Reality'
-    ],
-    entrepreneurship: [
-        'Business Fundamentals', 'Entrepreneurship Fundamentals', 'Freelancing', 'Business Strategy', 'Business Plan', 'Startup', 'Online Business', 'Blogging', 'Blockchain'
-    ],
-    businessAnalytics: [
-        'Microsoft Power BI', 'SQL', 'Tableau', 'Business Analysis', 'Data Modeling', 'Blockchain', 'Business Intelligence', 'MySQL', 'Data Analysis'
-    ],
-    digitalMarketing: [
-        'Digital Marketing', 'Social Media Marketing', 'Marketing Strategy', 'Internet Marketing', 'Copywriting', 'Google Analytics', 'Email Marketing', 'YouTube Marketing', 'Podcasting'
-    ],
-    graphicDesign: [
-        'Graphic Design', 'Photoshop', 'Adobe Illustrator', 'Drawing', 'Digital Painting', 'Canva', 'InDesign', 'Art Composition', 'Character Design'
-    ],
-    itCertification: [
-        'AWS Certification', 'Microsoft Certification', 'AWS Certified Solutions Architect - Associate', 'AWS Certified Cloud Practitioner', 'CompTIA A+', 'Amazon AWS', 'Cisco CCNA', 'AWS Certified Developer - Associate', 'Microsoft AZ-900'
-    ],
-    personalTransformation: [
-        'Life Coach Training', 'Neuro-Linguistic Programming', 'Personal Development', 'Personal Transformation', 'Life Purpose', 'Mindfulness', 'Meditation', 'CBT Cognitive Behavioral Therapy', 'Sound Therapy'
-    ],
-    allCategories: [
-        'Development', 'Business', 'Finance & Accounting', 'IT & Software', 'Office Productivity', 'Personal Development', 'Design', 'Marketing', 'Lifestyle', 'Photography & Video', 'Health & Fitness', 'Music', 'Teaching & Academics'
-    ]
-}
-
 const hamburger = document.querySelector('.hamburger')
 const screen = document.querySelector('.screen')
 const mainNav = document.querySelector('.main-nav')
@@ -39,7 +6,6 @@ const links = document.querySelectorAll('.side-nav-lists li')
 const nav2 = document.querySelector('.second-nav')
 const menus = document.querySelectorAll('.back-to-menu')
 const settingsNav = document.querySelector('.settings-nav')
-
 const secondNavList = document.querySelector('.second-nav-list')
 
 
@@ -60,9 +26,9 @@ links.forEach(link => {
     link.addEventListener('click', (e) => {
         nav2.classList.toggle('clicked')
         let category = (e.target.id || e.target.closest('li').id)
-        for (let cat in categories) {
+        for (let cat in sideNavCategoryObj) {
             if (cat === category) {
-                categories[cat].forEach(item => {
+                sideNavCategoryObj[cat].forEach(item => {
                     let li = document.createElement('li')
                     li.innerHTML = item
                     nav2.querySelector('ul').appendChild(li)
@@ -82,17 +48,57 @@ menus.forEach(menu => {
     })
 })
 
+/* function to fill categories dropdown in main nav */
+const mainNavCategories = document.querySelector('.category-list')
+
+for (i = 0; i < mainNavCategoryObjArr.length; i++) {
+    let li = document.createElement('li')
+    let span = document.createElement('span')
+    let name = mainNavCategoryObjArr[i].name
+    span.innerHTML = name
+    let icon = document.createElement('i')
+    icon.classList.add('fas')
+    icon.classList.add('fa-angle-right')
+    li.appendChild(span)
+    li.appendChild(icon)
+    li.id = name
+    mainNavCategories.appendChild(li)
+}
+
+const categorySideDrawer = document.querySelector('.category-side-drawer')
+const categoryLinks = document.querySelectorAll('.category-list li')
+categoryLinks.forEach(link => {
+    link.addEventListener('mouseover', (e) => {
+        categorySideDrawer.querySelector('ul').innerHTML = ''
+        let category = (e.target.id || e.target.closest('li').id)
+        for (let cat of mainNavCategoryObjArr) {
+            if (cat.name === category) {
+                cat.topics.forEach(item => {
+                    let li = document.createElement('li')
+                    let span = document.createElement('span')
+                    let icon = document.createElement('i')
+                    span.innerHTML = item.name
+                    icon.classList.add('fas')
+                    icon.classList.add('fa-angle-right')
+                    li.appendChild(span)
+                    li.appendChild(icon)
+                    li.id = item.name
+                    categorySideDrawer.querySelector('ul').appendChild(li)
+                })
+            }
+        }
+        if (categorySideDrawer.classList.contains('open')) {
+            return
+        } else {
+            categorySideDrawer.classList.add('open')
+        }
+        
+    })
+})
+
+
+/* function to fill my learning dropdown in main nav */
 const learningList = document.querySelector('.my-learning-list')
-const learningData = [
-    {
-        course: 'Javascript Algorithims and Data Structures Masterclass',
-        img: 'https://img-c.udemycdn.com/course/240x135/1406344_1d65_3.jpg'
-    },
-    {
-        course: 'The Modern React Bootcamp',
-        img: 'https://img-c.udemycdn.com/course/240x135/2320056_4fa0_6.jpg'
-    }
-]
 
 for (i = 0; i < learningData.length; i++){
     let image = document.createElement('img')
@@ -105,3 +111,8 @@ for (i = 0; i < learningData.length; i++){
     card.classList.add('learning-card')
     learningList.appendChild(card)
 }
+let learningLink = document.createElement('a')
+learningLink.innerHTML = 'Go to My Learning'
+learningLink.classList.add('drop-link')
+learningLink.classList.add('learning-list-link')
+learningList.appendChild(learningLink)

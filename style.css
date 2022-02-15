@@ -303,8 +303,14 @@ span.menu-header {
 }
 
 @media screen and (max-width: 800px) {
-	.hamburger {
+	.hamburger-container {
 		z-index: 1;
+		height: 100%;
+		display: flex;
+		align-items: center;
+	}
+	.hamburger {
+		z-index: 2;
 		width: 1.2rem;
 		height: 1.2rem;
 		cursor: pointer;
@@ -314,6 +320,7 @@ span.menu-header {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
+		align-items: center;
 		transition: transform 0.5s ease-in-out;
 	}
 

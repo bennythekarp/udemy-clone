@@ -14,14 +14,26 @@
 <body>
     <div class="container">
     <nav class="top-nav">
+        <div class="hamburger-container">
         <div class="hamburger">
             <div class="line line-1"></div>
             <div class="line line-2"></div>
             <div class="line line-3"></div>
          </div>
+        </div>
          <div class="front-piece">
             <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="logo" class="logo">
-            <div class='categories'>categories</div>
+            <div class='categories'>Categories
+                <div class="category-drop-menu">
+                    <ul class="category-list">
+                    </ul>
+                    <div class="category-side-drawer">
+                        <ul class="category-side-drawer-list">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
          </div>
         <form class="search-bar-container" src='/search' method="POST">
             <button class="search-bar-button">
@@ -280,6 +292,9 @@
             </ul>
         </section>
     </nav>
+    <script src='sideNavCategoryObj.js'></script>
+    <script src='mainNavCategoryObjArr.js'></script>
+    <script src='learningData.js'></script>
     <script src="app.js"></script>
 </body>
 </html>
