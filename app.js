@@ -65,6 +65,19 @@ for (i = 0; i < mainNavCategoryObjArr.length; i++) {
     mainNavCategories.appendChild(li)
 }
 
+const homepageNav = document.querySelector('.homepage-nav-ul')
+for (i = 0; i < mainNavCategoryObjArr.length; i++) {
+    let li = document.createElement('li')
+    let name = mainNavCategoryObjArr[i].name
+    li.innerHTML = name
+    let nameArr = name.split(' ')
+    let liClass = nameArr[0].toLowerCase()
+    li.classList.add(liClass)
+    if (liClass !== 'lifestyle' && liClass !== 'photography' && liClass !== 'teaching') {
+        homepageNav.appendChild(li)
+    }
+}
+
 const categorySideDrawer = document.querySelector('.category-side-drawer')
 const categoryLinks = document.querySelectorAll('.category-list li')
 categoryLinks.forEach(link => {

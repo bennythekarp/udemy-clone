@@ -41,18 +41,36 @@ ul li:hover {
 .greyed-out {
 	display: block;
 }
-
+.homepage-nav {
+	display: flex;
+	justify-content: center;
+}
+.homepage-nav-ul {
+	width: 1200px;
+	height: 50px;
+	background-color: white;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.homepage-nav li {
+	font-size: 0.85rem;
+}
+.main {
+	display: flex;
+	justify-content: center;
+	background-color: orange;
+}
 .main-jumbo-container {
 	position: relative;
 	z-index: -1;
 	padding-top: 1rem;
-	max-width: 1340px;
 	background-color: rgb(238, 237, 237);
 }
 .card {
 	position: absolute;
 	top: 2rem;
-	left: 4rem;
+	right: 4rem;
 	width: 30%;
 	height: auto;
 	background-color: white;
@@ -77,24 +95,21 @@ ul li:hover {
 	background-image: url("https://images.unsplash.com/photo-1514355315815-2b64b0216b14?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: auto;
+	background-size: cover;
 	min-height: 400px;
+	max-width: 1340px;
 }
-@media screen and (max-width: 992px) {
-	.card {
-		width: 331px;
+@media screen and (min-width: 1340px) {
+	.image-home {
+		margin: 0 5rem;
 	}
-}
-@media screen and (max-width: 768px) {
 	.card {
-		display: none;
-	}
-	.main-jumbo-container {
-		padding-top: 0;
+		right: 8rem;
+		width: 25%;
 	}
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1185px) {
 	.music {
 		display: none;
 	}
@@ -109,7 +124,7 @@ ul li:hover {
 		font-size: 1.2rem;
 	}
 }
-@media screen and (max-width: 1131px) {
+@media screen and (max-width: 1120px) {
 	.health {
 		display: none;
 	}
@@ -119,12 +134,18 @@ ul li:hover {
 		display: none;
 	}
 }
-@media screen and (max-width: 993px) {
+@media screen and (max-width: 992px) {
+	.card {
+		width: 331px;
+	}
+}
+@media screen and (max-width: 980px) {
 	.marketing {
 		display: none;
 	}
 }
-@media screen and (max-width: 897px) {
+
+@media screen and (max-width: 888px) {
 	.design {
 		display: none;
 	}
@@ -132,19 +153,15 @@ ul li:hover {
 		display: none;
 	}
 }
-@media screen and (max-width: 825px) {
-	.personal {
+@media screen and (max-width: 800px) {
+	.homepage-nav {
 		display: none;
 	}
-}
-@media screen and (max-width: 800px) {
 	.card {
 		display: none;
 	}
-}
-@media screen and (max-width: 767px) {
-	.bottom-nav {
-		display: none;
+	.main-jumbo-container {
+		padding-top: 0;
 	}
 }
 
@@ -336,7 +353,7 @@ span.menu-header {
 		left: 0;
 	}
 	.moved {
-		padding: 1rem;
+		padding: 0.8rem 0.5rem 0.8rem 1rem;
 		transform: translate(19rem, 1rem);
 	}
 
